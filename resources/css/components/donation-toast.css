@@ -1,0 +1,73 @@
+/* Donation Toast Component Styles */
+
+.donation-toast {
+    /* Toast will be positioned by Alpine.js transitions */
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out-right {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Toast stack - limit to max 3 visible */
+.donation-toast:nth-child(n+4) {
+    display: none;
+}
+
+/* Spacing between multiple toasts */
+.donation-toast + .donation-toast {
+    margin-top: 1rem;
+}
+
+/* Responsive positioning - Mobile: bottom center, Desktop: bottom right */
+@media (max-width: 640px) {
+    .donation-toast {
+        bottom: 1rem;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        max-width: calc(100% - 2rem);
+        width: calc(100% - 2rem);
+    }
+}
+
+@media (min-width: 641px) {
+    .donation-toast {
+        bottom: 1rem;
+        right: 1rem;
+        left: auto;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .donation-toast {
+        animation: none;
+    }
+    
+    .donation-toast * {
+        transition: none;
+    }
+}
+

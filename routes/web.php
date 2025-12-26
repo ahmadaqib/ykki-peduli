@@ -8,8 +8,11 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 })->name('home');
+
+Route::get('/campaign/{identifier}', \App\Livewire\Donation\CampaignDetail::class)
+    ->name('campaign.detail');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

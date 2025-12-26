@@ -1,0 +1,25 @@
+/* Campaign Card Component Styles */
+
+.campaign-card {
+    /* Glassmorphism effect on hover */
+    backdrop-filter: blur(10px);
+}
+
+.campaign-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Progress bar animation */
+.campaign-progress {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+

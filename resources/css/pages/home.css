@@ -1,0 +1,64 @@
+/* Homepage Styles */
+
+.hero-section {
+    position: relative;
+    background: transparent;
+}
+
+/* Smooth scroll behavior */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Campaign section spacing */
+.campaigns-section {
+    background: transparent;
+}
+
+/* Progress bar animation on scroll into view */
+@keyframes progressFill {
+    from {
+        width: 0%;
+    }
+}
+
+.campaign-progress {
+    animation: progressFill 1.5s ease-out;
+}
+
+/* Intersection Observer will trigger animation */
+.campaign-card[data-visible="true"] .campaign-progress {
+    animation: progressFill 1.5s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .hero-section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .campaigns-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+/* Accessibility: Skip to content link */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary-600);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
